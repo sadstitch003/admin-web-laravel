@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminControl;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+
+Route::post('/dashboard', [AdminControl::class, 'loginFunction'])->name('loginRoute');
