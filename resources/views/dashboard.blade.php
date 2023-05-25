@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="{{  asset('assets/css/demo.css')  }}">
 
   <!-- Vendors CSS -->
-  <link rel="stylesheet" href=".{{  asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css')  }}" />
+  <link rel="stylesheet" href="{{  asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css')  }}" />
 
   <link rel="stylesheet" href="{{  asset('assets/vendor/css/pages/page-auth.css')  }}" />
 
@@ -147,7 +147,7 @@
             </a>
             <ul class="menu-sub">
               <li class="menu-item">
-                <a href="productmaster.html" class="menu-link">
+                <a href="{{ route('productMaster') }}" class="menu-link">
                   <div data-i18n="Vertical Form">Product Master</div>
                 </a>
               </li>
