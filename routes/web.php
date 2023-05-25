@@ -21,3 +21,5 @@ Route::get('/', function () {
 
 
 Route::post('/dashboard', [AdminControl::class, 'loginFunction'])->name('loginRoute');
+
+Route::get('/product-master', [AdminControl::class, 'productMaster'])->name('productMaster');

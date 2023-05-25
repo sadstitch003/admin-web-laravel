@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\DB;
 
 class AdminControl extends Controller
 {
@@ -14,5 +15,11 @@ class AdminControl extends Controller
         {
             return view('dashboard');
         }
+    }
+
+    public function productMaster()
+    {
+        $transactions = DB::select("SELECT PROD_ID AS 'ID', IF(LENGTH(PROD_NAME) > 20, CONCAT(LEFT(PROD_NAME, 17), '...'), PROD_NAME) AS 'NAME', IF(LENGTH(PROD_DESC) > 20, CONCAT(LEFT(PROD_DESC, 17), '...'), PROD_DESC) AS 'DESC', CATEGORY_NAME AS 'CATEGORY', IF(P.STATUS_DEL = '0', 'Available', 'Not Available') AS 'STATUS', FORMAT(PROD_PRICE, 'C') AS 'PRICE', PROD_STOCK AS 'QTY' FROM PRODUCT P LEFT JOIN CATEGORY C ON C.CATEGORY_ID = P.CATEGORY_ID;");
+        return view('productmaster', compact('transactions'));
     }
 }
