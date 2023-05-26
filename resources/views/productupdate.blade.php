@@ -19,7 +19,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{  asset('assets/img/favicon/favicon.ico') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon/favicon.ico') }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,25 +30,24 @@
     />
 
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="{{  asset('assets/vendor/fonts/boxicons.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/vendor/fonts/boxicons.css') }}" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="{{  asset('assets/vendor/css/core.css') }}" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="{{  asset('assets/vendor/css/theme-default.css') }}" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="{{  asset('assets/css/demo.css') }}" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/css/core.css') }}" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{{ asset('assets/vendor/css/theme-default.css')  }}" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/demo.css')}}" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="{{  asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
+    <link rel="stylesheet" href="{{  asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css')  }}" />
 
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="{{  asset('assets/vendor/js/helpers.js') }}"></script>
+    <script src="{{  asset('assets/vendor/js/helpers.js')  }}"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="{{  asset('assets/js/config.js') }}"></script>
+    <script src="{{  asset('assets/js/config.js')  }}"></script>
   </head>
 
   <body>
@@ -154,12 +153,12 @@
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="{{ route('productMaster') }}" class="menu-link">
+                  <a href="{{  route('productMaster')  }}" class="menu-link">
                     <div data-i18n="Vertical Form">Product Master</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="{{ route('productInsert')  }}" class="menu-link">
+                  <a href="{{  route('productInsert')  }}" class="menu-link">
                     <div data-i18n="Horizontal Form">Input/Update Product</div>
                   </a>
                 </li>
@@ -218,14 +217,13 @@
             </div>
   
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-              Product/<b>Product Master</b>
-  
+              Product/<b>Product Detail</b>
               <ul class="navbar-nav flex-row align-items-center ms-auto">
                 <!-- User -->
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="{{   asset('assets/img/avatars/6.png') }}" alt class="w-px-40 h-auto rounded-circle" />
+                      <img src="{{  asset('assets/img/avatars/6.png')  }}" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -234,7 +232,7 @@
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="{{   asset('assets/img/avatars/6.png') }}" alt class="w-px-40 h-auto rounded-circle" />
+                              <img src="{{  asset('assets/img/avatars/6.png')  }}" alt class="w-px-40 h-auto rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">
@@ -270,121 +268,56 @@
             </div>
           </nav>  
 
-
           <!-- Content -->
-
-          
           <div class="container-xxl flex-grow-1 container-p-y">
             <div class="row">
-              
-              <div class="col-lg-12 mb-4 order-0">
-                <div class="card">
-                  <div class="row align-items-center justify-content-en p-2 px-4">
-                    <div class="col-4 px-0">
-                      <input type="text" class="form-control shadow-none" placeholder="Search this table..." aria-label="Search this table...">
-                    </div>
-                    <div class="col-1 text-end">
-                      Rows
-                    </div>
-                    <div class="col-1 px-0">
-                      <select name="num-of-rows" class="form-select shadow-none">
-                        <option value="10">10</option>
-                        <option value="25">25</option>
-                        <option value="50">50</option>
-                        <option value="100">100</option>
-                        <option value="all-row">All</option>
-                      </select>
-                    </div>  
-                    <div class="col-1 text-end">
-                      Category
-                    </div>
-                    <div class="col-1 px-0">
-                      <select name="category" class="form-select shadow-none">
-                        <option value="all-category">All</option>
-                        <option value="jacket">Jacket</option>
-                        <option value="tshirt">TShirt</option>
-                      </select>
-                    </div> 
-                    <div class="col-1 text-end">
-                        Sort By
-                    </div>
-                    <div class="col-1 px-0">
-                      <select name="Sort" class="form-select shadow-none">
-                        <option value="id">ID</option>
-                        <option value="name">Name</option>
-                        <option value="price">Price</option>
-                      </select>
-                    </div>
-                    <div class="col-1 text-end">
-                      Page
-                    </div>
-                    <div class="col-1 px-0">
-                      <select name="num-of-page" class="form-select shadow-none">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
               <div class="col-lg-12 mb-4 order-0">
                 <div class="card">
-                  <div class="row justify-content-center align-items-center p-4">
-                    <div class="table-responsive">
-                      <table class="table table-hover table-bordered">
-                        <thead>
-                          <tr>
-                            <th scope="col" style="width: 12%;">ID</th>
-                            <th scope="col" style="width: 16%;">NAME</th>
-                            <th scope="col" style="width: 16%;">DESC</th>
-                            <th scope="col" style="width: 12%;">CATEGORY</th>
-                            <th scope="col" style="width: 12%;">STATUS</th>
-                            <th scope="col" style="width: 12%;">PRICE</th>
-                            <th scope="col" style="width: 12%;">STOCK</th>
-                            <th scope="col" style="width: 8%;"></th>
-                          </tr>
-                          <tbody class="trans-table">
-                            <?php
-                              foreach ($products as $product) {
-                                echo"
-                                  <tr>
-                                    <th scope='row'>$product->ID</th>
-                                    <td>$product->NAME</td>
-                                    <td>$product->DESC</td>
-                                    <td>$product->CATEGORY</td>
-                                    <td>$product->STATUS</td>
-                                    <td class='text-end'>$product->PRICE</td>
-                                    <td class='text-end'>$product->QTY</td>
-                                    <td scope='col' style='padding: 15px 0px; text-align: center;'>
-                                      <a href='product-update/$product->ID'><i class='bi bi-pencil-square px-2'></i></a>
-                                      <a href='' onclick=''><i class='bi bi-trash text-danger px-2'></i></a>
-                                    </td>
-                                  </tr>
-                                ";
-                              }
-                            ?>
-                            {{-- <tr>
-                              <th scope="row">P-002</th>
-                              <td>Black Hoodie</td>
-                              <td>A black hoodie wi...</td>
-                              <td>Hoodie</td>
-                              <td>Available</td>
-                              <td class="text-end">250.000</td>
-                              <td class="text-end">30</td>
-                              <td scope="col" style="padding: 15px 0px; text-align: center;">
-                                <a href="" onclick=""><i class="bi bi-pencil-square px-2"></i></a>
-                                <a href="" onclick=""><i class="bi bi-trash text-danger px-2"></i></a>
-                              </td>
-                            </tr> --}}
-                          </tbody>
-                        </thead>
-                      </table>
+                  <div class="row p-5">
+                    <h3>Product Detail</h3>
+                    <div class="form">
+                      <div class="row">
+                        <?php print_r($products);; ?>
+                        <div class="col-xl-7 col-md-8 mb-3">
+                          <label for="prod-id" class="form-label">Product ID</label>
+                          <input type="text" value="{{  $products[0]->ID  }}" id="prod-id" class="form-control shadow-none" disabled>
+                        </div>
+                        <div class="col-xl-7 col-md-8 mb-3">
+                          <label for="prod-name" class="form-label">Product Name</label>
+                          <input type="text" placeholder="Product Name" id="prod-name" class="form-control shadow-none">
+                        </div>
+                        <div class="col-xl-7 col-md-8 mb-3">
+                          <label for="prod-name" class="form-label">Category</label>
+                          <select name="category" class="form-select shadow-none">
+                            <option value="jacket">Jacket</option>
+                            <option value="tshirt">TShirt</option>
+                          </select>
+                        </div>
+                        <div class="col-xl-7 col-md-8 mb-3">
+                          <div class="row justify-content-between">
+                            <div class="col-xl-6 col-md-12">
+                              <label for="prod-name" class="form-label">Price</label>
+                              <input type="number" placeholder="0" id="prod-name" class="form-control shadow-none">
+                            </div>
+                            <div class="col-xl-6 col-md-12">
+                              <label for="prod-name" class="form-label">Stock</label>
+                              <input type="number" placeholder="0" id="prod-name" class="form-control shadow-none">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xl-7 col-md-8 mb-3">
+                          <label for="prod-name" class="form-label">Description</label>
+                          <textarea placeholder="Product Description" id="prod-name" class="form-control shadow-none"></textarea>
+                        </div>
+                        <div class="col-xl-7 col-md-8 mb-3">
+                          <input type="button" value="Save" class="btn btn-primary">
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  </div>  
                 </div>
-              </div>
-
+              </div>  
             </div>
           </div>
           <!-- / Content -->
@@ -415,21 +348,21 @@
     </div>
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="{{  asset('assets/vendor/libs/jquery/jquery.js') }}"></script>
-    <script src="{{  asset('assets/vendor/libs/popper/popper.js') }}"></script>
-    <script src="{{  asset('assets/vendor/js/bootstrap.js') }}"></script>
-    <script src="{{  asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
+    <script src="{{  asset('assets/vendor/libs/jquery/jquery.js')  }}"></script>
+    <script src="{{  asset('assets/vendor/libs/popper/popper.js')  }}"></script>
+    <script src="{{  asset('assets/vendor/js/bootstrap.js')  }}"></script>
+    <script src="{{  asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js')  }}"></script>
 
-    <script src="{{  asset('assets/vendor/js/menu.js') }}"></script>
+    <script src="{{  asset('assets/vendor/js/menu.js')  }}"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
 
     <!-- Main JS -->
-    <script src="{{  asset('assets/js/main.js') }}"></script>
+    <script src="{{  asset('assets/js/main.js')  }}"></script>
 
     <!-- Page JS -->
-    <script src="{{  asset('assets/js/pages-account-settings-account.js') }}"></script>
+    <script src="../assets/js/pages-account-settings-account.js"></script>
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>

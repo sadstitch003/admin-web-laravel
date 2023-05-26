@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminControl;
 use App\Http\Controllers\Controller;
+use Illuminate\Console\View\Components\Alert;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +24,7 @@ Route::get('/', function () {
 Route::post('/dashboard', [AdminControl::class, 'loginFunction'])->name('loginRoute');
 
 Route::get('/product-master', [AdminControl::class, 'productMaster'])->name('productMaster');
+
+Route::get('/product-insert', [AdminControl::class, 'productInsert'])->name('productInsert');
+
+Route::get('/product-update/{prodid}', [AdminControl::class, 'productUpdate']);
