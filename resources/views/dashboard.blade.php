@@ -152,7 +152,7 @@
                 </a>
               </li>
               <li class="menu-item">
-                <a href="productupdate.html" class="menu-link">
+                <a href="{{ route('productInsert') }}" class="menu-link">
                   <div data-i18n="Horizontal Form">Input/Update Product</div>
                 </a>
               </li>
