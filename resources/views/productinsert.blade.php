@@ -287,30 +287,34 @@
                           <input type="text" placeholder="Product Name" id="prod-name" class="form-control shadow-none">
                         </div>
                         <div class="col-xl-7 col-md-8 mb-3">
-                          <label for="prod-name" class="form-label">Category</label>
-                          <select name="category" class="form-select shadow-none">
-                            <option value="jacket">Jacket</option>
-                            <option value="tshirt">TShirt</option>
+                          <label for="category" class="form-label">Category</label>
+                          <select name="category" class="form-select shadow-none" id="category">
+                            <?php
+                              foreach($categories as $category)
+                              {
+                                echo"<option value='$category->CATEGORY_ID'>$category->CATEGORY_NAME</option>";
+                              }
+                            ?>
                           </select>
                         </div>
                         <div class="col-xl-7 col-md-8 mb-3">
                           <div class="row justify-content-between">
                             <div class="col-xl-6 col-md-12">
-                              <label for="prod-name" class="form-label">Price</label>
-                              <input type="number" placeholder="0" id="prod-name" class="form-control shadow-none">
+                              <label for="prod-price" class="form-label">Price</label>
+                              <input type="number" placeholder="0" id="prod-price" class="form-control shadow-none">
                             </div>
                             <div class="col-xl-6 col-md-12">
-                              <label for="prod-name" class="form-label">Stock</label>
-                              <input type="number" placeholder="0" id="prod-name" class="form-control shadow-none">
+                              <label for="prod-qty" class="form-label">Stock</label>
+                              <input type="number" placeholder="0" id="prod-qty" class="form-control shadow-none">
                             </div>
                           </div>
                         </div>
                         <div class="col-xl-7 col-md-8 mb-3">
-                          <label for="prod-name" class="form-label">Description</label>
-                          <textarea placeholder="Product Description" id="prod-name" class="form-control shadow-none"></textarea>
+                          <label for="prod-desc" class="form-label">Description</label>
+                          <textarea placeholder="Product Description" id="prod-desc" class="form-control shadow-none"></textarea>
                         </div>
                         <div class="col-xl-7 col-md-8 mb-3">
-                          <input type="button" value="Save" class="btn btn-primary">
+                          <input type="submit" value="Save" class="btn btn-primary">
                         </div>
                       </div>
                     </div>

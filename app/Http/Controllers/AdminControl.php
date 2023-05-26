@@ -25,12 +25,14 @@ class AdminControl extends Controller
 
     public function productInsert()
     {
-        return view('productinsert');
+        $categories = DB::select("SELECT CATEGORY_ID, CATEGORY_NAME FROM CATEGORY");
+        return view('productinsert', compact('categories'));
     }
 
     public static function productUpdate($prodid)
     {
-        $products = DB::select("SELECT PROD_ID AS 'ID', IF(LENGTH(PROD_NAME) > 20, CONCAT(LEFT(PROD_NAME, 17), '...'), PROD_NAME) AS 'NAME', IF(LENGTH(PROD_DESC) > 20, CONCAT(LEFT(PROD_DESC, 17), '...'), PROD_DESC) AS 'DESC', CATEGORY_NAME AS 'CATEGORY', IF(P.STATUS_DEL = '0', 'Available', 'Not Available') AS 'STATUS', FORMAT(PROD_PRICE, 'C') AS 'PRICE', PROD_STOCK AS 'QTY' FROM PRODUCT P LEFT JOIN CATEGORY C ON C.CATEGORY_ID = P.CATEGORY_ID WHERE PROD_ID = '$prodid';");
-        return view('productupdate', compact('products'));
+        $products = DB::select("SELECT PROD_ID AS 'ID', PROD_NAME AS 'NAME', PROD_DESC AS 'DESC', C.CATEGORY_ID AS 'CAT_ID', CATEGORY_NAME AS 'CATEGORY', IF(P.STATUS_DEL = '0', 'Available', 'Not Available') AS 'STATUS', PROD_PRICE AS 'PRICE', PROD_STOCK AS 'QTY' FROM PRODUCT P LEFT JOIN CATEGORY C ON C.CATEGORY_ID = P.CATEGORY_ID WHERE PROD_ID = '$prodid';");
+        $categories = DB::select("SELECT CATEGORY_ID, CATEGORY_NAME FROM CATEGORY");
+        return view('productupdate', compact(['products','categories']));
     }
 }
