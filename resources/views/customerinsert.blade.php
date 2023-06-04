@@ -14,12 +14,12 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Update Profile</title>
+    <title>Profile</title>
 
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="{{  asset('assets/img/favicon/favicon.ico')  }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,24 +30,25 @@
     />
 
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="{{  asset('assets/vendor/fonts/boxicons.css')  }}" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="../assets/css/demo.css" />
+    <link rel="stylesheet" href="{{  asset('assets/vendor/css/core.css')  }}" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{{  asset('assets/vendor/css/theme-default.css')  }}" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="{{  asset('assets/css/demo.css')  }}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="{{  asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css')  }}" />
 
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="../assets/vendor/js/helpers.js"></script>
+    <script src="{{  asset('assets/vendor/js/helpers.js')  }}"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="../assets/js/config.js"></script>
+    <script src="{{  asset('assets/js/config.js')  }}"></script>
   </head>
 
   <body>
@@ -124,7 +125,7 @@
             <li class="menu-header small text-uppercase">
               <span class="menu-header-text">Account Settings</span>
             </li>
-            <li class="menu-item active">
+            <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Account Settings">Account</div>
@@ -182,7 +183,7 @@
                 </li>
               </ul>
             </li>
-            <li class="menu-item">
+            <li class="menu-item active">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Form Layouts">Customer</div>
@@ -232,7 +233,7 @@
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="../assets/img/avatars/6.png" alt class="w-px-40 h-auto rounded-circle" />
+                      <img src="{{  asset('assets/img/avatars/6.png')  }}" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -241,7 +242,7 @@
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="../assets/img/avatars/6.png" alt class="w-px-40 h-auto rounded-circle" />
+                              <img src="{{ asset('assets/img/avatars/6.png')   }}" alt class="w-px-40 h-auto rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">
@@ -277,126 +278,66 @@
             </div>
           </nav>  
 
-          <!-- / Navbar -->
+          <!-- Content -->
+          <div class="container-xxl flex-grow-1 container-p-y">
+            <div class="row">
 
-          <!-- Content wrapper -->
-          <div class="content-wrapper">
-            <!-- Content -->
-
-            <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Account Settings /</span> Update Profile</h4>
-
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="card mb-4">
-                    <h5 class="card-header">Profile Details</h5>
-                    <!-- Account -->
-                    <div class="card-body">
-                      <div class="d-flex align-items-start align-items-sm-center gap-4">
-                        <img
-                          src="../assets/img/avatars/6.png"
-                          alt="user-avatar"
-                          class="d-block rounded"
-                          height="100"
-                          width="100"
-                          id="uploadedAvatar"
-                        />
-                        <div class="button-wrapper">
-                          <label for="upload" class="btn btn-primary me-2 mb-4" tabdashboard="0">
-                            <span class="d-none d-sm-block">Upload new photo</span>
-                            <i class="bx bx-upload d-block d-sm-none"></i>
-                            <input
-                              type="file"
-                              id="upload"
-                              class="account-file-input"
-                              hidden
-                              accept="image/png, image/jpeg"
-                            />
-                          </label>
-                          <button type="button" class="btn btn-outline-secondary account-image-reset mb-4">
-                            <i class="bx bx-reset d-block d-sm-none"></i>
-                            <span class="d-none d-sm-block">Reset</span>
-                          </button>
-
-                          <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
-                        </div>
-                      </div>
-                    </div>
-                    <hr class="my-0" />
-                    <div class="card-body">
-                      <form id="formAccountSettings" method="POST" onsubmit="return false">
+              <div class="col-lg-12 mb-4 order-0">
+                <div class="card">
+                  <div class="row p-5">
+                    <h3>Customer Data</h3>
+                    <form action="{{  route('custInsertFunction')  }}" method="POST">
+                      {{ csrf_field() }}
+                      <div class="form">
                         <div class="row">
-                          <div class="mb-3 col-md-6">
-                            <label for="firstName" class="form-label">First Name</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="firstName"
-                              name="firstName"
-                              placeholder="Angeline"
-                              autofocus
-                            />
+                          <div class="col-lg-6 col-md-12 mb-3">
+                            <label for="cust-id" class="form-label">Customer ID</label>
+                            <input type="text" id="cust-id" name="ID" placeholder="auto generated by system" class="form-control shadow-none" disabled>
                           </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="lastName" class="form-label">Last Name</label>
-                            <input class="form-control" type="text" name="lastName" id="lastName" placeholder="Ivana" />
+                          <div class="col-lg-6 col-md-12 mb-3">
+                            <label for="cust-username" class="form-label">Username</label>
+                            <input type="text" id="cust-username" name="USERNAME" placeholder="Username" class="form-control shadow-none" required>
                           </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="email" class="form-label">E-mail</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="email"
-                              name="email"
-                              placeholder="email@gmail.com"
-                            />
+                          <div class="col-lg-6 col-md-12 mb-3">
+                            <label for="cust-name" class="form-label">Name</label>
+                            <input type="text" id="cust-name" name="NAME" placeholder="Name" class="form-control shadow-none" required>
                           </div>
-                          <div class="mb-3 col-md-6">
-                            <label class="form-label" for="phoneNumber">Phone Number</label>
-                            <div class="input-group input-group-merge">
-                              <span class="input-group-text">ID (+62)</span>
-                              <input
-                                type="text"
-                                id="phoneNumber"
-                                name="phoneNumber"
-                                class="form-control"
-                                placeholder="892 5552 0111"
-                              />
+                          <div class="col-lg-6 col-md-12 mb-3">
+                            <label for="cust-gender" class="form-label">Gender</label>
+                            <select name="GENDER" id="cust-gender" class="form-select shadow-none" required>
+                                <option value="M">Male</option>
+                                <option value="F">Female</option>
+                            </select>
+                          </div>
+                          <div class="col-lg-6 col-md-12 mb-3">
+                            <label for="cust-email" class="form-label">Email</label>
+                            <input type="email" id="cust-email" name="EMAIL" placeholder="example@gmail.com" class="form-control shadow-none" required>
+                          </div>
+                          <div class="col-lg-6 col-md-12 mb-3">
+                            <label for="cust-address" class="form-label">Address</label>
+                            <input type="text" id="cust-address" name="ADDRESS" placeholder="Address" class="form-control shadow-none" required>
+                          </div>
+                          <div class="col-lg-6 col-md-12 mb-3">
+                            <label for="cust-phone" class="form-label">Phone</label>
+                            <input type="text" id="cust-phone" name="PHONE" placeholder="62XXXXXXXX" class="form-control shadow-none" required>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-6 col-md-12 mb-3">
+                              <input type="submit" value="Save" class="btn btn-primary">
                             </div>
                           </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="address" class="form-label">Address</label>
-                            <input type="text" class="form-control" id="address" name="address" placeholder="Address" />
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="state" class="form-label">City</label>
-                            <input class="form-control" type="text" id="state" name="state" placeholder="Surabaya" />
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="zipCode" class="form-label">Zip Code</label>
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="zipCode"
-                              name="zipCode"
-                              placeholder="60283"
-                              maxlength="5"
-                            />
-                          </div>
-                        <div class="mt-2">
-                          <button type="submit" class="btn btn-primary me-2">Save changes</button>
-                          <button type="reset" class="btn btn-outline-secondary">Cancel</button>
                         </div>
-                      </form>
-                    </div>
-                    <!-- /Account -->
-                  </div>
-                </div>
+                      </div>
+                    </form>
+                  </div>  
+                </div>  
               </div>
-            </div>
-            <!-- / Content -->
+            </div>   
+          </div>   
+         
+          <!-- / Content -->
 
-            <!-- Footer -->
+          <!-- Footer -->
           <footer class="content-footer footer bg-footer-theme">
             <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
               <div class="mb-2 mb-md-0">
@@ -422,21 +363,21 @@
     </div>
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="../assets/vendor/libs/popper/popper.js"></script>
-    <script src="../assets/vendor/js/bootstrap.js"></script>
-    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="{{  asset('assets/vendor/libs/jquery/jquery.js')  }}"></script>
+    <script src="{{  asset('assets/vendor/libs/popper/popper.js')  }}"></script>
+    <script src="{{  asset('assets/vendor/js/bootstrap.js')  }}"></script>
+    <script src="{{  asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js')  }}"></script>
 
-    <script src="../assets/vendor/js/menu.js"></script>
+    <script src="{{  asset('assets/vendor/js/menu.js')  }}"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
 
     <!-- Main JS -->
-    <script src="../assets/js/main.js"></script>
+    <script src="{{  asset('assets/js/main.js')  }}"></script>
 
     <!-- Page JS -->
-    <script src="../assets/js/pages-account-settings-account.js"></script>
+    <script src="{{  asset('assets/js/pages-account-settings-account.js')  }}"></script>
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>

@@ -51,7 +51,7 @@
       <!-- Menu -->
       <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
         <div class="app-brand demo">
-          <a href="dashboard.html" class="app-brand-link">
+          <a href="{{  route('dashboard')  }}" class="app-brand-link">
             <span class="app-brand-logo demo">
               <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -109,32 +109,10 @@
         <ul class="menu-inner py-1">
           <!-- Dashboard -->
           <li class="menu-item active">
-            <a href="dashboard.html" class="menu-link">
+            <a href="{{  route('dashboard')  }}" class="menu-link">
               <i class="menu-icon tf-icons bx bx-home-circle"></i>
               <div data-i18n="Analytics">Dashboard</div>
             </a>
-          </li>
-
-          <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Account Settings</span>
-          </li>
-          <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-              <i class="menu-icon tf-icons bx bx-dock-top"></i>
-              <div data-i18n="Account Settings">Account</div>
-            </a>
-            <ul class="menu-sub">
-              <li class="menu-item">
-                <a href="profile.html" class="menu-link">
-                  <div data-i18n="Account">Profile</div>
-                </a>
-              </li>
-              <li class="menu-item">
-                <a href="pages-account-settings-account.html" class="menu-link">
-                  <div data-i18n="Account">Update Profile</div>
-                </a>
-              </li>
-            </ul>
           </li>
 
           <!-- Forms & Tables -->
@@ -165,12 +143,12 @@
             </a>
             <ul class="menu-sub">
               <li class="menu-item">
-                <a href="transactions.html" class="menu-link">
+                <a href="{{  route('transaction')  }}" class="menu-link">
                   <div data-i18n="Vertical Form">Transaction Header</div>
                 </a>
               </li>
               <li class="menu-item">
-                <a href="transactiondetail.html" class="menu-link">
+                <a href="{{  route('transactionProduct')  }}" class="menu-link">
                   <div data-i18n="Horizontal Form">Transaction Detail</div>
                 </a>
               </li>
@@ -183,12 +161,12 @@
             </a>
             <ul class="menu-sub">
               <li class="menu-item">
-                <a href="customerdata.html" class="menu-link">
+                <a href="{{  route('customerData')  }}" class="menu-link">
                   <div data-i18n="customer-list">Customer Data</div>
                 </a>
               </li>
               <li class="menu-item">
-                <a href="customer.html" class="menu-link">
+                <a href="{{  route('customerInsert')  }}" class="menu-link">
                   <div data-i18n="Vertical Form">Input/Update Customer</div>
                 </a>
               </li>
@@ -212,62 +190,9 @@
           </div>
 
           <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-            <!-- Search -->
-            <div class="navbar-nav align-items-center">
-              <div class="nav-item d-flex align-items-center">
-                <i class="bx bx-search fs-4 lh-0"></i>
-                <input type="text" class="form-control border-0 shadow-none" placeholder="Search..."
-                  aria-label="Search..." />
-              </div>
-            </div>
-            <!-- /Search -->
+            <b>Dashboard</b>
 
             <ul class="navbar-nav flex-row align-items-center ms-auto">
-              <!-- User -->
-              <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                  <div class="avatar avatar-online">
-                    <img src="{{  asset('assets/img/avatars/6.png')  }}" alt class="w-px-40 h-auto rounded-circle" />
-                  </div>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end">
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      <div class="d-flex">
-                        <div class="flex-shrink-0 me-3">
-                          <div class="avatar avatar-online">
-                            <img src="{{  asset('assets/img/avatars/6.png')  }}" alt class="w-px-40 h-auto rounded-circle" />
-                          </div>
-                        </div>
-                        <div class="flex-grow-1">
-                          <span class="fw-semibold d-block">Angeline Ivana</span>
-                          <small class="text-muted">Admin</small>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <div class="dropdown-divider"></div>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="profile.html">
-                      <i class="bx bx-user me-2"></i>
-                      <span class="align-middle">My Profile</span>
-                    </a>
-                  </li>
-
-                  <li>
-                    <div class="dropdown-divider"></div>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="index.html">
-                      <i class="bx bx-power-off me-2"></i>
-                      <span class="align-middle">Log Out</span>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <!--/ User -->
             </ul>
           </div>
         </nav>

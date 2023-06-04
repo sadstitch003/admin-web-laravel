@@ -19,7 +19,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{  asset(assets/img/favicon/favicon.ico) }}" />
+    <link rel="icon" type="image/x-icon" href="{{  asset('assets/img/favicon/favicon.ico')  }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,24 +30,25 @@
     />
 
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="{{ asset('assets/vendor/fonts/boxicons.css')  }}" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="../assets/css/demo.css" />
+    <link rel="stylesheet" href="{{  asset('assets/vendor/css/core.css')  }}" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{{  asset('assets/vendor/css/theme-default.css')  }}" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/demo.css')  }}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="{{  asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css')  }}" />
 
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="../assets/vendor/js/helpers.js"></script>
+    <script src="{{ asset('assets/vendor/js/helpers.js')  }}"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="../assets/js/config.js"></script>
+    <script src="{{  asset('assets/js/config.js')  }}"></script>
   </head>
 
   <body>
@@ -146,7 +147,7 @@
             <!-- Forms & Tables -->
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Data</span></li>
             <!-- Forms -->
-            <li class="menu-item active">
+            <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Form Layouts">Product</div>
@@ -182,7 +183,7 @@
                 </li>
               </ul>
             </li>
-            <li class="menu-item">
+            <li class="menu-item active">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Form Layouts">Customer</div>
@@ -217,13 +218,22 @@
             </div>
   
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-              Product/<b>Product Stock</b>  
+              <!-- Search -->
+              <div class="navbar-nav align-items-center">
+                <div class="nav-item d-flex align-items-center">
+                  <i class="bx bx-search fs-4 lh-0"></i>
+                  <input type="text" class="form-control border-0 shadow-none" placeholder="Search..."
+                    aria-label="Search..." />
+                </div>
+              </div>
+              <!-- /Search -->
+  
               <ul class="navbar-nav flex-row align-items-center ms-auto">
                 <!-- User -->
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="../assets/img/avatars/6.png" alt class="w-px-40 h-auto rounded-circle" />
+                      <img src="{{  asset('assets/img/avatars/6.png')  }}" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -232,7 +242,7 @@
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="../assets/img/avatars/6.png" alt class="w-px-40 h-auto rounded-circle" />
+                              <img src="{{  asset('assets/img/avatars/6.png')  }}" alt class="w-px-40 h-auto rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">
@@ -246,7 +256,7 @@
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="profile.html">
+                      <a class="dropdown-item" href="pages-account-settings-account.html">
                         <i class="bx bx-user me-2"></i>
                         <span class="align-middle">My Profile</span>
                       </a>
@@ -268,14 +278,82 @@
             </div>
           </nav>  
 
-
           <!-- Content -->
           <div class="container-xxl flex-grow-1 container-p-y">
             <div class="row">
+              
+              <div class="col-lg-12 mb-4 order-0">
+                <div class="card">
+                  <div class="row align-items-center justify-content-en p-2 px-4">
+                    <div class="col-4 px-0">
+                      <input type="text" class="form-control shadow-none" placeholder="Search this table..." aria-label="Search this table...">
+                    </div>
+                    <div class="col-4"></div>
+                    <div class="col-1 text-end">
+                      Rows
+                    </div>
+                    <div class="col-1 px-0">
+                      <select name="num-of-rows" class="form-select shadow-none">
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                        <option value="all-row">All</option>
+                      </select>
+                    </div>  
+                    <div class="col-1 text-end">
+                      Page
+                    </div>
+                    <div class="col-1 px-0">
+                      <select name="num-of-page" class="form-select shadow-none">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               <div class="col-lg-12 mb-4 order-0">
                 <div class="card">
-
+                  <div class="row justify-content-center align-items-center p-4">
+                    <div class="table-responsive">
+                      <table class="table table-hover table-bordered">
+                        <thead>
+                          <tr>
+                            <th scope="col" style="width: 13%;">ID</th>
+                            <th scope="col" style="width: 5%;">USERNAME</th>
+                            <th scope="col" style="width: 21%;">NAME</th>
+                            <th scope="col" style="width: 4%;">GENDER</th>
+                            <th scope="col" style="width: 10%;">EMAIL</th>
+                            <th scope="col" style="width: 24%;">ADDRESS</th>
+                            <th scope="col" style="width: 12%;">PHONE</th>
+                            <th scope="col" style="width: 3%;"></th>
+                          </tr>
+                          <tbody>
+                            <?php
+                              foreach ($customers as $c) {
+                                echo"
+                                <tr>
+                                  <th scope='row'>$c->ID</th>
+                                  <td>$c->USERNAME</td>
+                                  <td>$c->NAME</td>
+                                  <td>$c->GENDER</td>
+                                  <td>$c->EMAIL</td>
+                                  <td>$c->ADDRESS</td>
+                                  <td>$c->PHONE</td>
+                                  <td scope='col' style=padding: 15px 0px; text-align: center;'>
+                                    <a href='customer-edit/$c->ID'><i class='bi bi-pencil-square text-primary px-2'></i></a>
+                                  </td>
+                                </tr>
+                                ";
+                              }
+                            ?>
+                          </tbody>
+                        </thead>
+                      </table>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -309,21 +387,21 @@
     </div>
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="../assets/vendor/libs/popper/popper.js"></script>
-    <script src="../assets/vendor/js/bootstrap.js"></script>
-    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="{{  asset('assets/vendor/libs/jquery/jquery.js')  }}"></script>
+    <script src="{{  asset('assets/vendor/libs/popper/popper.js')  }}"></script>
+    <script src="{{  asset('assets/vendor/js/bootstrap.js')  }}"></script>
+    <script src="{{  asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js')  }}"></script>
 
-    <script src="../assets/vendor/js/menu.js"></script>
+    <script src="{{  asset('assets/vendor/js/menu.js')  }}"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
 
     <!-- Main JS -->
-    <script src="../assets/js/main.js"></script>
+    <script src="{{  asset('assets/js/main.js')  }}"></script>
 
     <!-- Page JS -->
-    <script src="../assets/js/pages-account-settings-account.js"></script>
+    <script src="{{  asset('assets/js/pages-account-settings-account.js')  }}"></script>
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>

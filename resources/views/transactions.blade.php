@@ -30,25 +30,25 @@
     />
     
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="{{  asset('assets/vendor/fonts/boxicons.css')  }}" />
     
     <!-- Core CSS -->
-    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="../assets/css/demo.css" />
+    <link rel="stylesheet" href="{{  asset('assets/vendor/css/core.css') }}" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{{  asset('assets/vendor/css/theme-default.css')  }}" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="{{  asset('assets/css/demo.css')  }}" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="{{  asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css')  }}" />
 
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="../assets/vendor/js/helpers.js"></script>
+    <script src="{{ asset('assets/vendor/js/helpers.js')  }}"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="../assets/js/config.js"></script>
+    <script src="{{  asset('assets/js/config.js')  }}"></script>
   </head>
 
   <body>
@@ -218,13 +218,13 @@
             </div>
   
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-              Transaction/<b>Transaction Detail</b>
+              Transaction/<b>Transaction Header</b>
               <ul class="navbar-nav flex-row align-items-center ms-auto">
                 <!-- User -->
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="../assets/img/avatars/6.png" alt class="w-px-40 h-auto rounded-circle" />
+                      <img src="{{  asset('assets/img/avatars/6.png')  }}" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -233,7 +233,7 @@
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="../assets/img/avatars/6.png" alt class="w-px-40 h-auto rounded-circle" />
+                              <img src="{{ asset('assets/img/avatars/6.png')  }}" alt class="w-px-40 h-auto rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">
@@ -247,7 +247,7 @@
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="pages-account-settings-account.html">
+                      <a class="dropdown-item" href="profile.html">
                         <i class="bx bx-user me-2"></i>
                         <span class="align-middle">My Profile</span>
                       </a>
@@ -275,53 +275,10 @@
 
               <div class="col-lg-12 mb-4 order-0">
                 <div class="card">
-                  <div class="row justify-content-center align-items-center p-4">
-                    <div class="row p-5">
-                      <h3>Transaction Header</h3>
-                      <div class="form">
-                        <div class="row">
-                          <div class="col-lg-6 col-md-12 mb-3">
-                            <label for="transaction-id" class="form-label">Transaction ID</label>
-                            <input type="text" id="transaction-id" placeholder="Transaction ID" class="form-control shadow-none">
-                          </div>
-                          <div class="col-lg-6 col-md-12 mb-3">
-                            <label for="transaction-date" class="form-label">Transaction Date</label>
-                            <input type="text" id="transaction-date" placeholder="Date" class="form-control shadow-none">
-                          </div>
-                          <div class="col-lg-6 col-md-12 mb-3">
-                            <label for="cust-id" class="form-label">Customer ID</label>
-                            <input type="text" id="cust-id" placeholder="Customer ID" class="form-control shadow-none">
-                          </div>
-                          <div class="col-lg-6 col-md-12 mb-3">
-                            <label for="transaction-status" class="form-label">Status</label>
-                            <input type="text" id="transaction-status" placeholder="Status" class="form-control shadow-none">
-                          </div>
-                          <div class="col-lg-6 col-md-12 mb-3">
-                            <label for="payment" class="form-label">Payment Method</label>
-                            <input type="text" id="payment" placeholder="Payment Method" class="form-control shadow-none">
-                          </div>
-                          <div class="col-lg-6 col-md-12 mb-3">
-                            <label for="transaction-total" class="form-label">Total</label>
-                            <input type="number" id="transaction-total" placeholder="Total" class="form-control shadow-none">
-                          </div>
-                          <div class="col-12">
-                            <label for="shipping-address" class="form-label">Shipping Address</label>
-                            <input type="text" id="shipping-address" placeholder="Address" class="form-control shadow-none">
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>  
-                </div>  
-              </div>  
-
-              <div class="col-lg-12 mb-4 order-0">
-                <div class="card">
                   <div class="row align-items-center justify-content-en p-2 px-4">
-                    <div class="col-4 px-0">
+                    <div class="col-2 px-0">
                       <input type="text" class="form-control shadow-none" placeholder="Search this table..." aria-label="Search this table...">
                     </div>
-                    <div class="col-2"></div>
                     <div class="col-1 text-end">
                       Rows
                     </div>
@@ -334,6 +291,18 @@
                         <option value="all-row">All</option>
                       </select>
                     </div>  
+                    <div class="col-1 text-end">
+                      Start Date
+                    </div>
+                    <div class="col-1 px-0">
+                      <input type="date" name="end-date" id="end-date" class="form-control shadow-none">
+                    </div> 
+                    <div class="col-1 text-end">
+                      End Date
+                    </div>
+                    <div class="col-1 px-0">
+                      <input type="date" name="end-date" id="end-date" class="form-control shadow-none">
+                    </div> 
                     <div class="col-1 text-end">
                         Sort By
                     </div>
@@ -364,23 +333,32 @@
                       <table class="table table-hover table-bordered">
                         <thead>
                           <tr>
-                            <th scope="col">TRANSACTION ID</th>
-                            <th scope="col">PRODUCT</th>
-                            <th scope="col">QUANTITY</th>
-                            <th scope="col">PRICE</th>
-                            <th scope="col"></th>
+                            <th scope="col" style="width: 17%;">ID</th>
+                            <th scope="col" style="width: 9%;">CUST</th>
+                            <th scope="col" style="width: 12%;">DATE</th>
+                            <th scope="col" style="width: 19%;">SHIP</th>
+                            <th scope="col" style="width: 13%;">METHOD</th>
+                            <th scope="col" style="width: 10%;">STATUS</th>
+                            <th scope="col" style="width: 15%;">TOTAL</th>
+                            <th scope="col" style="width: 5%;"></th>
                           </tr>
                           <tbody>
-                            <tr>
-                              <td>20230420-T-001</td>
-                              <td>P-001</td>
-                              <td>2</td>
-                              <td class="text-end">100.000</td>
-                              <td scope="col" style="padding: 15px 0px; text-align: center;">
-                                <a href="" onclick=""><i class="bi bi-clipboard-check px-2"></i></a>
-                                <a href="" onclick=""><i class="bi bi-trash text-danger px-2"></i></a>
-                              </td>
-                            </tr>
+                            <?php
+                              foreach ($transactions as $transaction) {
+                                echo"<tr>
+                                  <th scope='row'>$transaction->ID</th>
+                                  <td>$transaction->CUSTID</td>
+                                  <td>$transaction->DATE</td>
+                                  <td>$transaction->SHIP</td>
+                                  <td>$transaction->METHOD</td>
+                                  <td>$transaction->STATUS</td>
+                                  <td class='text-end'>$transaction->TOTAL</td>
+                                  <td scope='col' style='padding: 15px 0px; text-align: center;''>
+                                    <a href='transaction-detail/$transaction->ID'><i class='bi bi-clipboard-check px-2'></i></a>
+                                  </td>
+                                </tr>";
+                              }
+                            ?>
                           </tbody>
                         </thead>
                       </table>
@@ -420,21 +398,21 @@
     </div>
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="../assets/vendor/libs/popper/popper.js"></script>
-    <script src="../assets/vendor/js/bootstrap.js"></script>
-    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="{{  asset('assets/vendor/libs/jquery/jquery.js')  }}"></script>
+    <script src="{{  asset('assets/vendor/libs/popper/popper.js')  }}"></script>
+    <script src="{{  asset('assets/vendor/js/bootstrap.js')  }}"></script>
+    <script src="{{  asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js')  }}"></script>
 
-    <script src="../assets/vendor/js/menu.js"></script>
+    <script src="{{  asset('assets/vendor/js/menu.js')  }}"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
 
     <!-- Main JS -->
-    <script src="../assets/js/main.js"></script>
+    <script src="{{  asset('assets/js/main.js')  }}"></script>
 
     <!-- Page JS -->
-    <script src="../assets/js/pages-account-settings-account.js"></script>
+    <script src="{{  asset('assets/js/pages-account-settings-account.js')  }}"></script>
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>

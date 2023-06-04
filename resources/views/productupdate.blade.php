@@ -14,7 +14,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Profile</title>
+    <title>Product Update</title>
 
     <meta name="description" content="" />
 
@@ -57,7 +57,7 @@
         <!-- Menu -->
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
-            <a href="dashboard.html" class="app-brand-link">
+            <a href="{{  route('dashboard')  }}" class="app-brand-link">
               <span class="app-brand-logo demo">
                 <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg"
                   xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -115,32 +115,10 @@
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
             <li class="menu-item">
-              <a href="dashboard.html" class="menu-link">
+              <a href="{{  route('dashboard')  }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
-            </li>
-  
-            <li class="menu-header small text-uppercase">
-              <span class="menu-header-text">Account Settings</span>
-            </li>
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                <div data-i18n="Account Settings">Account</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="profile.html" class="menu-link">
-                    <div data-i18n="Account">Profile</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="pages-account-settings-account.html" class="menu-link">
-                    <div data-i18n="Account">Update Profile</div>
-                  </a>
-                </li>
-              </ul>
             </li>
   
             <!-- Forms & Tables -->
@@ -171,12 +149,12 @@
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="transactions.html" class="menu-link">
+                  <a href="{{  route('transaction')  }}" class="menu-link">
                     <div data-i18n="Vertical Form">Transaction Header</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="transactiondetail.html" class="menu-link">
+                  <a href="{{  route('transactionProduct')  }}" class="menu-link">
                     <div data-i18n="Horizontal Form">Transaction Detail</div>
                   </a>
                 </li>
@@ -189,12 +167,12 @@
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="customerdata.html" class="menu-link">
+                  <a href="{{  route('customerData')  }}" class="menu-link">
                     <div data-i18n="customer-list">Customer Data</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="customer.html" class="menu-link">
+                  <a href="{{  route('customerInsert')  }}" class="menu-link">
                     <div data-i18n="Vertical Form">Input/Update Customer</div>
                   </a>
                 </li>
@@ -219,51 +197,6 @@
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
               Product/<b>Product Detail</b>
               <ul class="navbar-nav flex-row align-items-center ms-auto">
-                <!-- User -->
-                <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                    <div class="avatar avatar-online">
-                      <img src="{{  asset('assets/img/avatars/6.png')  }}" alt class="w-px-40 h-auto rounded-circle" />
-                    </div>
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-end">
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <div class="d-flex">
-                          <div class="flex-shrink-0 me-3">
-                            <div class="avatar avatar-online">
-                              <img src="{{  asset('assets/img/avatars/6.png')  }}" alt class="w-px-40 h-auto rounded-circle" />
-                            </div>
-                          </div>
-                          <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">Angeline Ivana</span>
-                            <small class="text-muted">Admin</small>
-                          </div>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="dropdown-divider"></div>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="profile.html">
-                        <i class="bx bx-user me-2"></i>
-                        <span class="align-middle">My Profile</span>
-                      </a>
-                    </li>
-  
-                    <li>
-                      <div class="dropdown-divider"></div>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="index.html">
-                        <i class="bx bx-power-off me-2"></i>
-                        <span class="align-middle">Log Out</span>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <!--/ User -->
               </ul>
             </div>
           </nav>  
@@ -276,52 +209,55 @@
                 <div class="card">
                   <div class="row p-5">
                     <h3>Product Detail</h3>
-                    <div class="form">
-                      <div class="row">
-                        <div class="col-xl-7 col-md-8 mb-3">
-                          <label for="prod-id" class="form-label">Product ID</label>
-                          <input type="text" value="{{  $products[0]->ID  }}" id="prod-id" class="form-control shadow-none" disabled>
-                        </div>
-                        <div class="col-xl-7 col-md-8 mb-3">
-                          <label for="prod-name" class="form-label">Product Name</label>
-                          <input type="text" value="{{  $products[0]->NAME  }}" id="prod-name" class="form-control shadow-none">
-                        </div>
-                        <div class="col-xl-7 col-md-8 mb-3">
-                          <label for="category" class="form-label">Category</label>
-                          <select name="category" class="form-select shadow-none" id="category">
-                            <?php
-                              foreach($categories as $category)
-                              {
-                                if ($category->CATEGORY_ID == $products[0]->CAT_ID) {
-                                  echo"<option value='$category->CATEGORY_ID' selected>$category->CATEGORY_NAME</option>";
-                                }
-                                else {
-                                  echo"<option value='$category->CATEGORY_ID'>$category->CATEGORY_NAME</option>";
-                                }
-                              }
-                            ?>
-                          </select>
-                        </div>
-                        <div class="col-xl-7 col-md-8 mb-3">
-                          <div class="row justify-content-between">
-                            <div class="col-xl-6 col-md-12">
-                              <label for="prod-price" class="form-label">Price</label>
-                              <input type="number" value="{{  $products[0]->PRICE  }}" placeholder="0" id="prod-price" class="form-control shadow-none">
+                      <form action="{{  route('updateRoute', $products[0]->ID)  }}" method="POST">
+                        {{ csrf_field() }}
+                        <div class="form">
+                          <div class="row">
+                            <div class="col-xl-7 col-md-8 mb-3">
+                              <label for="prod-id" class="form-label">Product ID</label>
+                              <input type="text" name="PRODID" value="{{  $products[0]->ID  }}" id="ID" class="form-control shadow-none" readonly="true" required>
                             </div>
-                            <div class="col-xl-6 col-md-12">
-                              <label for="prod-qty" class="form-label">Stock</label>
-                              <input type="number" value="{{  $products[0]->QTY  }}"  placeholder="0" id="prod-qty" class="form-control shadow-none">
+                            <div class="col-xl-7 col-md-8 mb-3">
+                              <label for="prod-name" class="form-label">Product Name</label>
+                              <input type="text" name="NAME" value="{{  $products[0]->NAME  }}" id="prod-name" class="form-control shadow-none" required>
+                            </div>
+                            <div class="col-xl-7 col-md-8 mb-3">
+                              <label for="category" class="form-label">Category</label>
+                              <select name="CATEGORY" class="form-select shadow-none" id="category" required>
+                                <?php
+                                foreach($categories as $category)
+                                {
+                                  if ($category->CATEGORY_ID == $products[0]->CAT_ID) {
+                                    echo"<option value='$category->CATEGORY_ID' selected>$category->CATEGORY_NAME</option>";
+                                  }
+                                  else {
+                                    echo"<option value='$category->CATEGORY_ID'>$category->CATEGORY_NAME</option>";
+                                  }
+                                }
+                                ?>
+                            </select>
+                          </div>
+                          <div class="col-xl-7 col-md-8 mb-3">
+                            <div class="row justify-content-between">
+                              <div class="col-xl-6 col-md-12">
+                                <label for="prod-price" class="form-label">Price</label>
+                                <input type="number" value="{{  $products[0]->PRICE  }}" placeholder="0" id="prod-price" name="PRICE" class="form-control shadow-none" required>
+                              </div>
+                              <div class="col-xl-6 col-md-12">
+                                <label for="prod-stock" class="form-label">Stock</label>
+                                <input type="number" value="{{  $products[0]->QTY  }}"  placeholder="0" id="prod-stock" name="STOCK" class="form-control shadow-none" required>
+                              </div>
                             </div>
                           </div>
+                          <div class="col-xl-7 col-md-8 mb-3">
+                            <label for="prod-desc" class="form-label">Description</label>
+                            <textarea name="DESC" id="prod-desc" class="form-control shadow-none" required>{{  $products[0]->DESC  }}</textarea>
+                          </div>
+                          <div class="col-xl-7 col-md-8 mb-3">
+                            <input type="submit" value="Save" class="btn btn-primary">
+                          </div>
                         </div>
-                        <div class="col-xl-7 col-md-8 mb-3">
-                          <label for="prod-desc" class="form-label">Description</label>
-                          <textarea id="prod-desc" class="form-control shadow-none">{{  $products[0]->DESC  }}</textarea>
-                        </div>
-                        <div class="col-xl-7 col-md-8 mb-3">
-                          <input type="submit" value="Save" class="btn btn-primary">
-                        </div>
-                      </div>
+                      </form>
                     </div>
                   </div>  
                 </div>
