@@ -212,14 +212,17 @@
               
               <div class="col-lg-12 mb-4 order-0">
                 <div class="card">
-                  <div class="row align-items-center justify-content-en p-2 px-4">
-                    <div class="col-4 px-0">
-                      <input type="text" class="form-control shadow-none btn-outline-secondary" placeholder="Search this table..." aria-label="Search this table...">
-                    </div>
-                    <div class="col-1 px-3">
-                      <input type="submit" value="Search" class="btn btn-outline-secondary">
-                    </div>
-                  </div>
+                  <form method="POST" action="{{  route('productMasterSearch')  }}">
+                    {{ csrf_field() }}
+                    <div class="row align-items-center justify-content-en p-2 px-4">
+                        <div class="col-4 px-0">
+                          <input type="text" name="SEARCH" class="form-control shadow-none btn-outline-secondary" placeholder="Search this table..." aria-label="Search this table...">
+                        </div>
+                        <div class="col-1 px-3">
+                          <input type="submit" value="Search" class="btn btn-outline-secondary">
+                        </div>
+                      </div>
+                    </form>
                 </div>
               </div>
 

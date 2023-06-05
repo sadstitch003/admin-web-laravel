@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('loginPage');
 
 Route::post('/login-process', [AdminControl::class, 'loginFunction'])->name('loginRoute');
 
@@ -51,3 +51,11 @@ Route::post('/customer-insert-process', [AdminControl::class, 'custInsertFunctio
 Route::get('/customer-edit/{custid}', [AdminControl::class, 'customerEdit'])->name('customerEdit');
 
 Route::post('/customer-edit-process', [AdminControl::class, 'editFunction'])->name('editFunction');
+
+
+
+Route::post('/transaction-search', [AdminControl::class, 'transactionSearch'])->name('transactionSearch');
+
+Route::post('/product-master-search', [AdminControl::class, 'productMasterSearch'])->name('productMasterSearch');
+
+Route::post('/customer-data-search', [AdminControl::class, 'customerDataSearch'])->name('customerDataSearch');
