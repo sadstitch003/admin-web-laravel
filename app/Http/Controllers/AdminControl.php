@@ -34,6 +34,7 @@ class AdminControl extends Controller
 
             $topCustomer = DB::select("SELECT C.CUST_NAME AS 'CUSTNAME', CONCAT('Rp.', FORMAT(SUM(T.TRANS_TOTAL_PRICE), 'C')), SUM(T.TRANS_TOTAL_PRICE) AS 'TOTAL' FROM TRANSACTION T LEFT JOIN CUSTOMER C ON T.CUST_ID = C.CUST_ID GROUP BY T.TRANS_ID, C.CUST_NAME ORDER BY 3 DESC LIMIT 5;");
             $topProduct = DB::select("SELECT P.PROD_NAME AS 'PRODNAME', SUM(TRANS_QTY) AS 'QTY' FROM TRANSACTION_PRODUCT TP LEFT JOIN PRODUCT P ON P.PROD_ID = TP.PROD_ID GROUP BY P.PROD_NAME ORDER BY 2 DESC LIMIT 5;");
+            
             $user = Session::get('adminUser');
             return view('dashboard', compact('user', 'totalRevenue', 'totalTransaction', 'totalProduct', 'totalCustomer', 'topCustomer', 'topProduct'));
         } 
@@ -74,7 +75,7 @@ class AdminControl extends Controller
     {
         if(Session::exists('adminUser'))
         {
-            $transactions = DB::select("SELECT TRANS_ID as 'ID', CUST_ID as 'CUSTID', TRANS_DATE as 'DATE', IF(LENGTH(SHIPPING_ADDRESS) > 20, CONCAT(LEFT(SHIPPING_ADDRESS, 17), '...'), SHIPPING_ADDRESS) as 'SHIP', PAYMENT_METHOD as 'METHOD', IF(PAYMENT_STATUS = 'P', 'Paid', 'Not Paid') as 'STATUS', FORMAT(TRANS_TOTAL_PRICE, 'C') as 'TOTAL'  FROM transaction ORDER BY DATE DESC;");
+            $transactions = DB::select("SELECT TRANS_ID AS 'ID', CUST_ID AS 'CUSTID', TRANS_DATE AS 'DATE', IF(LENGTH(SHIPPING_ADDRESS) > 20, CONCAT(LEFT(SHIPPING_ADDRESS, 17), '...'), SHIPPING_ADDRESS) AS 'SHIP', PAYMENT_METHOD AS 'METHOD', IF(PAYMENT_STATUS = 'P', 'Paid', 'Not Paid') AS 'STATUS', FORMAT(TRANS_TOTAL_PRICE, 'C') AS 'TOTAL'  FROM TRANSACTION ORDER BY DATE DESC;");
             return view('transactions', compact('transactions'));
         } 
         else
@@ -88,7 +89,7 @@ class AdminControl extends Controller
         if(Session::exists('adminUser'))
         {
             $search = $request['SEARCH'];
-            $transactions = DB::select("SELECT TRANS_ID as 'ID', CUST_ID as 'CUSTID', TRANS_DATE as 'DATE', IF(LENGTH(SHIPPING_ADDRESS) > 20, CONCAT(LEFT(SHIPPING_ADDRESS, 17), '...'), SHIPPING_ADDRESS) as 'SHIP', PAYMENT_METHOD as 'METHOD', IF(PAYMENT_STATUS = 'P', 'Paid', 'Not Paid') as 'STATUS', FORMAT(TRANS_TOTAL_PRICE, 'C') as 'TOTAL'  FROM transaction WHERE TRANS_ID LIKE '%$search%' OR CUST_ID LIKE '%$search%' OR TRANS_DATE LIKE '%$search%' ORDER BY DATE DESC;");
+            $transactions = DB::select("SELECT TRANS_ID AS 'ID', CUST_ID AS 'CUSTID', TRANS_DATE AS 'DATE', IF(LENGTH(SHIPPING_ADDRESS) > 20, CONCAT(LEFT(SHIPPING_ADDRESS, 17), '...'), SHIPPING_ADDRESS) AS 'SHIP', PAYMENT_METHOD AS 'METHOD', IF(PAYMENT_STATUS = 'P', 'Paid', 'Not Paid') AS 'STATUS', FORMAT(TRANS_TOTAL_PRICE, 'C') AS 'TOTAL'  FROM transaction WHERE TRANS_ID LIKE '%$search%' OR CUST_ID LIKE '%$search%' OR TRANS_DATE LIKE '%$search%' ORDER BY DATE DESC;");
             return view('transactions', compact('transactions'));
         } 
         else
@@ -101,7 +102,7 @@ class AdminControl extends Controller
     {
         if(Session::exists('adminUser'))
         {
-            $transactionproduct = DB::select("SELECT TRANS_ID as 'ID', PROD_ID as 'PRODID', TRANS_QTY as 'QTY', FORMAT(TRANS_PRICE, 'C') as 'PRICE' FROM TRANSACTION_PRODUCT ORDER BY 1 DESC");
+            $transactionproduct = DB::select("SELECT TRANS_ID AS 'ID', PROD_ID AS 'PRODID', TRANS_QTY AS 'QTY', FORMAT(TRANS_PRICE, 'C') as 'PRICE' FROM TRANSACTION_PRODUCT ORDER BY 1 DESC");
             return view('transactionproduct', compact('transactionproduct'));
         } 
         else
@@ -114,8 +115,8 @@ class AdminControl extends Controller
     {
         if(Session::exists('adminUser'))
         {
-            $header = DB::select("SELECT TRANS_ID as 'ID', CUST_ID as 'CUSTID', TRANS_DATE as 'DATE', SHIPPING_ADDRESS as 'SHIP', PAYMENT_METHOD as 'METHOD', IF(PAYMENT_STATUS = 'P', 'Paid', 'Not Paid') as 'STATUS', TRANS_TOTAL_PRICE as 'TOTAL'  FROM transaction WHERE TRANS_ID = '$transid';");
-            $detail = DB::select("SELECT TRANS_ID as 'ID', PROD_ID as 'PRODID', TRANS_QTY as 'QTY', FORMAT(TRANS_PRICE, 'C') as 'PRICE' FROM TRANSACTION_PRODUCT WHERE TRANS_ID = '$transid'");
+            $header = DB::select("SELECT TRANS_ID AS 'ID', CUST_ID AS 'CUSTID', TRANS_DATE AS 'DATE', SHIPPING_ADDRESS AS 'SHIP', PAYMENT_METHOD AS 'METHOD', IF(PAYMENT_STATUS = 'P', 'Paid', 'Not Paid') AS 'STATUS', TRANS_TOTAL_PRICE AS 'TOTAL'  FROM TRANSACTION WHERE TRANS_ID = '$transid';");
+            $detail = DB::select("SELECT TRANS_ID AS 'ID', PROD_ID AS 'PRODID', TRANS_QTY AS 'QTY', FORMAT(TRANS_PRICE, 'C') AS 'PRICE' FROM TRANSACTION_PRODUCT WHERE TRANS_ID = '$transid'");
             return view('transactiondetail', compact('header', 'detail'));
         } 
         else
