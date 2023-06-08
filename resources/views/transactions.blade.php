@@ -14,7 +14,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Profile</title>
+    <title>Transaction</title>
 
     <meta name="description" content="" />
 
@@ -28,26 +28,27 @@
       href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
     />
-
+    
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
-
+    <link rel="stylesheet" href="{{  asset('assets/vendor/fonts/boxicons.css')  }}" />
+    
     <!-- Core CSS -->
-    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="../assets/css/demo.css" />
+    <link rel="stylesheet" href="{{  asset('assets/vendor/css/core.css') }}" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{{  asset('assets/vendor/css/theme-default.css')  }}" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="{{  asset('assets/css/demo.css')  }}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="{{  asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css')  }}" />
 
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="../assets/vendor/js/helpers.js"></script>
+    <script src="{{ asset('assets/vendor/js/helpers.js')  }}"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="../assets/js/config.js"></script>
+    <script src="{{  asset('assets/js/config.js')  }}"></script>
   </head>
 
   <body>
@@ -57,7 +58,7 @@
         <!-- Menu -->
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
-            <a href="dashboard.html" class="app-brand-link">
+            <a href="{{  route('dashboard')  }}" class="app-brand-link">
               <span class="app-brand-logo demo">
                 <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg"
                   xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -115,34 +116,13 @@
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
             <li class="menu-item">
-              <a href="dashboard.html" class="menu-link">
+              <a href="{{  route('dashboard')  }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
             </li>
   
-            <li class="menu-header small text-uppercase">
-              <span class="menu-header-text">Account Settings</span>
-            </li>
-            <li class="menu-item active">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                <div data-i18n="Account Settings">Account</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="profile.html" class="menu-link">
-                    <div data-i18n="Account">Profile</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="pages-account-settings-account.html" class="menu-link">
-                    <div data-i18n="Account">Update Profile</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-  
+          
             <!-- Forms & Tables -->
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Data</span></li>
             <!-- Forms -->
@@ -153,30 +133,30 @@
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="productmaster.html" class="menu-link">
+                  <a href="{{  route('productMaster')  }}" class="menu-link">
                     <div data-i18n="Vertical Form">Product Master</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="productupdate.html" class="menu-link">
+                  <a href="{{  route('productInsert')}}" class="menu-link">
                     <div data-i18n="Horizontal Form">Input/Update Product</div>
                   </a>
                 </li>
               </ul>
             </li>
-            <li class="menu-item">
+            <li class="menu-item active">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Form Layouts">Transactions</div>
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="transactions.html" class="menu-link">
+                  <a href="{{  route('transaction')  }}" class="menu-link">
                     <div data-i18n="Vertical Form">Transaction Header</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="transactiondetail.html" class="menu-link">
+                  <a href="{{  route('transactionProduct')  }}" class="menu-link">
                     <div data-i18n="Horizontal Form">Transaction Detail</div>
                   </a>
                 </li>
@@ -189,12 +169,12 @@
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <li class="menu-item">
-                    <a href="customerdata.html" class="menu-link">
-                      <div data-i18n="customer-list">Customer Data</div>
-                    </a>
-                  </li>
-                  <a href="customer.html" class="menu-link">
+                  <a href="{{  route('customerData')  }}" class="menu-link">
+                    <div data-i18n="customer-list">Customer Data</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{{  route('customerInsert')  }}" class="menu-link">
                     <div data-i18n="Vertical Form">Input/Update Customer</div>
                   </a>
                 </li>
@@ -217,159 +197,79 @@
             </div>
   
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-              <!-- Search -->
-              <div class="navbar-nav align-items-center">
-                <div class="nav-item d-flex align-items-center">
-                  <i class="bx bx-search fs-4 lh-0"></i>
-                  <input type="text" class="form-control border-0 shadow-none" placeholder="Search..."
-                    aria-label="Search..." />
-                </div>
-              </div>
-              <!-- /Search -->
-  
+              Transaction/<b>Transaction Header</b>
               <ul class="navbar-nav flex-row align-items-center ms-auto">
-                <!-- User -->
-                <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                    <div class="avatar avatar-online">
-                      <img src="../assets/img/avatars/6.png" alt class="w-px-40 h-auto rounded-circle" />
-                    </div>
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-end">
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <div class="d-flex">
-                          <div class="flex-shrink-0 me-3">
-                            <div class="avatar avatar-online">
-                              <img src="../assets/img/avatars/6.png" alt class="w-px-40 h-auto rounded-circle" />
-                            </div>
-                          </div>
-                          <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">Angeline Ivana</span>
-                            <small class="text-muted">Admin</small>
-                          </div>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="dropdown-divider"></div>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="profile.html">
-                        <i class="bx bx-user me-2"></i>
-                        <span class="align-middle">My Profile</span>
-                      </a>
-                    </li>
-  
-                    <li>
-                      <div class="dropdown-divider"></div>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="index.html">
-                        <i class="bx bx-power-off me-2"></i>
-                        <span class="align-middle">Log Out</span>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <!--/ User -->
               </ul>
             </div>
           </nav>  
 
-          <!-- / Navbar -->
+          <!-- Content -->
+          <div class="container-xxl flex-grow-1 container-p-y">
+            <div class="row">
 
-          <!-- Content wrapper -->
-          <div class="content-wrapper">
-            <!-- Content -->
-
-            <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Account Settings /</span> Profile</h4>
-
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="card mb-4">
-                    <h3 class="card-header">Your Profile</h3>
-                    <!-- Account -->
-                    <div class="card-body">
-                      <div class="d-flex align-items-start align-items-sm-center gap-4">
-                        <img
-                          src="../assets/img/avatars/6.png"
-                          alt="user-avatar"
-                          class="d-block rounded"
-                          height="100"
-                          width="100"
-                          id="uploadedAvatar"
-                        />
+              <div class="col-lg-12 mb-4 order-0">
+                <div class="card">
+                  <form method="POST" action="{{  route('transactionSearch')  }}">
+                  {{ csrf_field() }}
+                  <div class="row align-items-center justify-content-en p-2 px-4">
+                      <div class="col-4 px-0">
+                        <input type="text" name="SEARCH" class="form-control shadow-none btn-outline-secondary" placeholder="Search this table..." aria-label="Search this table...">
+                      </div>
+                      <div class="col-1 px-3">
+                        <input type="submit" value="Search" class="btn btn-outline-secondary">
                       </div>
                     </div>
-                    <div class="card-body">
-                      <form id="formAccountSettings" method="POST" onsubmit="return false">
-                        <div class="row">
-                          <div class="mb-3 col-md-6">
-                            <label for="fullName" class="form-label">Full Name</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="firstName"
-                              name="firstName"
-                              value="Angeline Ivana"
-                              disabled
-                            />
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="email" class="form-label">E-mail</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="email"
-                              name="email"
-                              value="angelineivana@gmail.com"
-                              disabled
-                            />
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label class="form-label" for="phoneNumber">Phone Number</label>
-                            <div class="input-group input-group-merge">
-                              <input
-                                type="text"
-                                id="phoneNumber"
-                                name="phoneNumber"
-                                class="form-control"
-                                value="+62 892 5552 0111"
-                                disabled
-                              />
-                            </div>
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="address" class="form-label">Address</label>
-                            <input type="text" class="form-control" id="address" name="address" value="CitraLand CBD Boulevard, Made, Kec. Sambikerep, Surabaya, Jawa Timur 60219" disabled />
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="city" class="form-label">City</label>
-                            <input class="form-control" type="text" id="state" name="state" value="Surabaya" disabled />
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="zipCode" class="form-label">Zip Code</label>
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="zipCode"
-                              name="zipCode"
-                              value="60283"
-                              disabled
-                            />
-                          </div>
-                      </form>
+                  </form>
+                </div>
+              </div>
+
+              <div class="col-lg-12 mb-4 order-0">
+                <div class="card">
+                  <div class="row justify-content-center align-items-center p-4">
+                    <div class="table-responsive">
+                      <table class="table table-hover table-bordered">
+                        <thead>
+                          <tr>
+                            <th scope="col" style="width: 17%;">ID</th>
+                            <th scope="col" style="width: 9%;">CUST</th>
+                            <th scope="col" style="width: 12%;">DATE</th>
+                            <th scope="col" style="width: 19%;">SHIP</th>
+                            <th scope="col" style="width: 13%;">METHOD</th>
+                            <th scope="col" style="width: 10%;">STATUS</th>
+                            <th scope="col" style="width: 15%;">TOTAL</th>
+                            <th scope="col" style="width: 5%;"></th>
+                          </tr>
+                          <tbody>
+                            <?php
+                              foreach ($transactions as $transaction) {
+                                echo"<tr>
+                                  <th scope='row'>$transaction->ID</th>
+                                  <td>$transaction->CUSTID</td>
+                                  <td>$transaction->DATE</td>
+                                  <td>$transaction->SHIP</td>
+                                  <td>$transaction->METHOD</td>
+                                  <td>$transaction->STATUS</td>
+                                  <td class='text-end'>$transaction->TOTAL</td>
+                                  <td scope='col' style='padding: 15px 0px; text-align: center;''>
+                                    <a href='transaction-detail/$transaction->ID'><i class='bi bi-clipboard-check px-2'></i></a>
+                                  </td>
+                                </tr>";
+                              }
+                            ?>
+                          </tbody>
+                        </thead>
+                      </table>
                     </div>
-                    <!-- /Account -->
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- / Content -->
 
-            <!-- Footer -->
+            </div>
+          </div>
+          <!-- / Content -->
+
+
+          <!-- Footer -->
           <footer class="content-footer footer bg-footer-theme">
             <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
               <div class="mb-2 mb-md-0">
@@ -395,21 +295,21 @@
     </div>
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="../assets/vendor/libs/popper/popper.js"></script>
-    <script src="../assets/vendor/js/bootstrap.js"></script>
-    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="{{  asset('assets/vendor/libs/jquery/jquery.js')  }}"></script>
+    <script src="{{  asset('assets/vendor/libs/popper/popper.js')  }}"></script>
+    <script src="{{  asset('assets/vendor/js/bootstrap.js')  }}"></script>
+    <script src="{{  asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js')  }}"></script>
 
-    <script src="../assets/vendor/js/menu.js"></script>
+    <script src="{{  asset('assets/vendor/js/menu.js')  }}"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
 
     <!-- Main JS -->
-    <script src="../assets/js/main.js"></script>
+    <script src="{{  asset('assets/js/main.js')  }}"></script>
 
     <!-- Page JS -->
-    <script src="../assets/js/pages-account-settings-account.js"></script>
+    <script src="{{  asset('assets/js/pages-account-settings-account.js')  }}"></script>
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>

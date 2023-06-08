@@ -51,7 +51,7 @@
       <!-- Menu -->
       <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
         <div class="app-brand demo">
-          <a href="dashboard.html" class="app-brand-link">
+          <a href="{{  route('dashboard')  }}" class="app-brand-link">
             <span class="app-brand-logo demo">
               <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -109,32 +109,10 @@
         <ul class="menu-inner py-1">
           <!-- Dashboard -->
           <li class="menu-item active">
-            <a href="dashboard.html" class="menu-link">
+            <a href="{{  route('dashboard')  }}" class="menu-link">
               <i class="menu-icon tf-icons bx bx-home-circle"></i>
               <div data-i18n="Analytics">Dashboard</div>
             </a>
-          </li>
-
-          <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Account Settings</span>
-          </li>
-          <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-              <i class="menu-icon tf-icons bx bx-dock-top"></i>
-              <div data-i18n="Account Settings">Account</div>
-            </a>
-            <ul class="menu-sub">
-              <li class="menu-item">
-                <a href="profile.html" class="menu-link">
-                  <div data-i18n="Account">Profile</div>
-                </a>
-              </li>
-              <li class="menu-item">
-                <a href="pages-account-settings-account.html" class="menu-link">
-                  <div data-i18n="Account">Update Profile</div>
-                </a>
-              </li>
-            </ul>
           </li>
 
           <!-- Forms & Tables -->
@@ -165,12 +143,12 @@
             </a>
             <ul class="menu-sub">
               <li class="menu-item">
-                <a href="transactions.html" class="menu-link">
+                <a href="{{  route('transaction')  }}" class="menu-link">
                   <div data-i18n="Vertical Form">Transaction Header</div>
                 </a>
               </li>
               <li class="menu-item">
-                <a href="transactiondetail.html" class="menu-link">
+                <a href="{{  route('transactionProduct')  }}" class="menu-link">
                   <div data-i18n="Horizontal Form">Transaction Detail</div>
                 </a>
               </li>
@@ -183,12 +161,12 @@
             </a>
             <ul class="menu-sub">
               <li class="menu-item">
-                <a href="customerdata.html" class="menu-link">
+                <a href="{{  route('customerData')  }}" class="menu-link">
                   <div data-i18n="customer-list">Customer Data</div>
                 </a>
               </li>
               <li class="menu-item">
-                <a href="customer.html" class="menu-link">
+                <a href="{{  route('customerInsert')  }}" class="menu-link">
                   <div data-i18n="Vertical Form">Input/Update Customer</div>
                 </a>
               </li>
@@ -212,62 +190,9 @@
           </div>
 
           <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-            <!-- Search -->
-            <div class="navbar-nav align-items-center">
-              <div class="nav-item d-flex align-items-center">
-                <i class="bx bx-search fs-4 lh-0"></i>
-                <input type="text" class="form-control border-0 shadow-none" placeholder="Search..."
-                  aria-label="Search..." />
-              </div>
-            </div>
-            <!-- /Search -->
+            <b>Dashboard</b>
 
             <ul class="navbar-nav flex-row align-items-center ms-auto">
-              <!-- User -->
-              <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                  <div class="avatar avatar-online">
-                    <img src="{{  asset('assets/img/avatars/6.png')  }}" alt class="w-px-40 h-auto rounded-circle" />
-                  </div>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end">
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      <div class="d-flex">
-                        <div class="flex-shrink-0 me-3">
-                          <div class="avatar avatar-online">
-                            <img src="{{  asset('assets/img/avatars/6.png')  }}" alt class="w-px-40 h-auto rounded-circle" />
-                          </div>
-                        </div>
-                        <div class="flex-grow-1">
-                          <span class="fw-semibold d-block">Angeline Ivana</span>
-                          <small class="text-muted">Admin</small>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <div class="dropdown-divider"></div>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="profile.html">
-                      <i class="bx bx-user me-2"></i>
-                      <span class="align-middle">My Profile</span>
-                    </a>
-                  </li>
-
-                  <li>
-                    <div class="dropdown-divider"></div>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="index.html">
-                      <i class="bx bx-power-off me-2"></i>
-                      <span class="align-middle">Log Out</span>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <!--/ User -->
             </ul>
           </div>
         </nav>
@@ -280,14 +205,15 @@
 
           <div class="container-xxl flex-grow-1 container-p-y">
             <div class="row">
-              <div class="col-lg-8 mb-4 order-0">
+
+              <div class="col-lg-12 mb-4 order-0">
                 <div class="card">
                   <div class="d-flex align-items-end row">
                     <div class="col-sm-7">
                       <div class="card-body">
-                        <h5 class="text-primary">Congratulations Angeline!</h5>
+                        <h5 class="text-primary">Good Morning, {{  $user  }}!</h5>
                         <p class="mb-4">
-                          You have done <span class="fw-bold">72%</span> more sales today. Thankyou!
+                          Have a great day!
                         </p>
                       </div>
                     </div>
@@ -301,312 +227,144 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-4 col-md-4 order-1">
-                <div class="row">
-                  <div class="col-lg-6 col-md-12 col-6 mb-4">
-                    <div class="card">
-                      <div class="card-body">
-                        <div class="card-title d-flex align-items-start justify-content-between">
-                          <div class="avatar flex-shrink-0">
-                            <img src="{{  asset('assets/img/icons/unicons/chart-success.png')  }}" alt="chart success"
-                              class="rounded" />
-                          </div>
-                        </div>
-                        <h6>Profit</h6>
-                        <h3 class="card-title mb-2">Rp 216.000</h3>
-                        <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +72.80%</small>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-12 col-6 mb-4">
-                    <div class="card">
-                      <div class="card-body">
-                        <div class="card-title d-flex align-items-start justify-content-between">
-                          <div class="avatar flex-shrink-0">
-                            <img src="{{  asset('assets/img/icons/unicons/wallet-info.png')  }}" alt="Credit Card" class="rounded" />
-                          </div>
-                        </div>
-                        <h6>Sales</h6>
-                        <h3 class="card-title text-nowrap mb-1">Rp 10.670.800</h3>
-                        <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.42%</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Total Revenue -->
-              <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
-                <div class="card">
-                  <div class="row row-bordered g-0">
-                    <div class="col-md-8">
-                      <h5 class="card-header m-0 me-2 pb-3">Stock Sales</h5>
-                      <div class= "mb-2" id="totalRevenueChart" class="px-2"></div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class= "mt-2" id="growthChart"></div>
-                      <div class="text-center fw-semibold pt-3 mb-2">Monthly Sales Growth</div>
 
-                      <div class="d-flex px-xxl-4 px-lg-2 p-4 gap-xxl-3 gap-lg-1 gap-3 justify-content-between">
-                        <div class="d-flex">
-                          <div class="me-2">
-                            <span class="badge bg-label-primary p-2"><i class="bx bxs-shopping-bags text-primary"></i></span>
-                          </div>
-                          <div class="d-flex flex-column">
-                            <small>2022</small>
-                            <h6 class="mb-0">1,197 pcs</h6>
-                          </div>
-                        </div>
-                        <div class="d-flex">
-                          <div class="me-2">
-                            <span class="badge bg-label-info p-2"><i class="bx bxs-shopping-bags text-primary"></i></span>
-                          </div>
-                          <div class="d-flex flex-column">
-                            <small>2023</small>
-                            <h6 class="mb-0">763 pcs</h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!--/ Total Revenue -->
-              <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
-                <div class="row">
-                  <div class="col-6 mb-4">
-                    <div class="card">
-                      <div class="card-body">
-                        <div class="card-title d-flex align-items-start justify-content-between">
-                          <div class="avatar flex-shrink-0">
-                            <img src="{{  asset('assets/img/icons/unicons/paypal.png')  }}" alt="Credit Card" class="rounded" />
-                          </div>
-                        </div>
-                        <h6>Item Count</h6>
-                        <h3 class="card-title text-nowrap mb-2">15</h3>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-6 mb-4">
-                    <div class="card">
-                      <div class="card-body">
-                        <div class="card-title d-flex align-items-start justify-content-between">
-                          <div class="avatar flex-shrink-0">
-                            <img src="{{  asset('assets/img/icons/unicons/cc-primary.png')  }}" alt="Credit Card" class="rounded" />
-                          </div>
-                        </div>
-                        <h6>Transactions</h6>
-                        <h3 class="card-title mb-2">78</h3>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              
             </div>
+            
             <div class="row">
-              <!-- Order Statistics -->
-              <div class="col-md-6 col-lg-4 col-xl-4 order-0 mb-4">
-                <div class="card h-100">
-                  <div class="card-header d-flex align-items-center justify-content-between pb-0">
-                    <div class="card-title mb-0">
-                      <h5 class="m-0 me-2">Order Statistics</h5>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                      <div class="d-flex flex-column align-items-center gap-1">
-                        <h2 class="mb-2">763</h2>
-                        <span>Total Orders</span>
+              
+              <div class="col-lg-3 mb-4 order-0">
+                <div class="card">
+                  <div class="d-flex align-items-end row">
+  
+                    <div class="card-body px-5">
+                      <div class="card-title d-flex align-items-start justify-content-between">
+                        <div class="avatar flex-shrink-0">
+                          <img src="{{  asset('assets/img/icons/unicons/wallet-info.png')  }}" alt="Credit Card" class="rounded">
+                        </div>
                       </div>
-                      <div id="orderStatisticsChart"></div>
+                      <h5 class="my-1">Revenue</h5>
+                      <h3>{{$totalRevenue}}</h3>
                     </div>
-                    <ul class="p-0 m-0">
-                      <li class="d-flex mb-4 pb-1">
-                        <div class="avatar flex-shrink-0 me-3">
-                          <span class="avatar-initial rounded bg-label-primary">
-                            <i class="bx bx-closet"></i>
-                          </span>
-                        </div>
-                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                          <div class="me-2">
-                            <h6 class="mb-0">Clothes</h6>
-                            <small class="text-muted">T-shirt, Jacket, Other</small>
-                          </div>
-                          <div class="user-progress">
-                            <small class="fw-semibold">452</small>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="d-flex mb-4 pb-1">
-                        <div class="avatar flex-shrink-0 me-3">
-                          <img src="{{  asset('assets/img/icons/unicons/shoes.png')  }}" class="rounded" />
-                        </div>
-                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                          <div class="me-2">
-                            <h6 class="mb-0">Shoes</h6>
-                            <small class="text-muted">Shoes, Heels</small>
-                          </div>
-                          <div class="user-progress">
-                            <small class="fw-semibold">101</small>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="d-flex mb-4 pb-1">
-                        <div class="avatar flex-shrink-0 me-3">
-                          <span class="avatar-initial rounded bg-label-info"><i class="bx bx-shopping-bag"></i></span>
-                        </div>
-                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                          <div class="me-2">
-                            <h6 class="mb-0">Bag</h6>
-                          </div>
-                          <div class="user-progress">
-                            <small class="fw-semibold">45</small>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="d-flex mb-4 pb-1">
-                        <div class="avatar flex-shrink-0 me-3">
-                          <img src="{{  asset('assets/img/icons/unicons/accesories.png')  }}" class="rounded" />
-                        </div>
-                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                          <div class="me-2">
-                            <h6 class="mb-0">Accesories</h6>
-                          </div>
-                          <div class="user-progress">
-                            <small class="fw-semibold">55</small>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="d-flex mb-4 pb-1">
-                        <div class="avatar flex-shrink-0 me-3">
-                          <span class="avatar-initial rounded bg-label-secondary"><i class="bx bx-football"></i></span>
-                        </div>
-                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                          <div class="me-2">
-                            <h6 class="mb-0">Sportswear</h6>
-                            <small class="text-muted">Swimsuit, Other</small>
-                          </div>
-                          <div class="user-progress">
-                            <small class="fw-semibold">47</small>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="d-flex mb-4 pb-1">
-                        <div class="avatar flex-shrink-0 me-3">
-                          <span class="avatar-initial rounded bg-label-secondary"><i class="bx bx-bed"></i></span>
-                        </div>
-                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                          <div class="me-2">
-                            <h6 class="mb-0">Sleepwear</h6>
-                          </div>
-                          <div class="user-progress">
-                            <small class="fw-semibold">63</small>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
+  
                   </div>
                 </div>
               </div>
-              <!--/ Order Statistics -->
+              
 
-              <!-- Expense Overview -->
-              <div class="col-md-6 col-lg-4 order-1 mb-4">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div class="card-title mb-0">
-                      <h5 class="m-0 me-2">Income</h5>
+              <div class="col-lg-3 mb-4 order-0">
+                <div class="card">
+                  <div class="d-flex align-items-end row">
+                    
+                    <div class="card-body px-5">
+                      <div class="card-title d-flex align-items-start justify-content-between">
+                        <div class="avatar flex-shrink-0">
+                          <img src="{{  asset('assets/img/icons/unicons/cc-primary.png')  }}" alt="Credit Card" class="rounded">
+                        </div>
+                      </div>
+                      <h5 class="my-1">Transactions</h5>
+                      <h4>{{$totalTransaction}}</h4>
                     </div>
+
                   </div>
-                  <div class="card-body px-0">
-                    <div class="tab-content p-0">
-                      <div class="tab-pane fade show active" id="navs-tabs-line-card-income" role="tabpanel">
-                        <div class="d-flex p-4 pt-3">
-                          <div class="avatar flex-shrink-0 me-3">
-                            <img src="{{  asset('assets/img/icons/unicons/wallet.png')  }}" alt="User" />
-                          </div>
-                          <div>
-                            <small class="text-muted d-block">Total Balance</small>
-                            <div class="d-flex align-items-center">
-                              <h6 class="mb-0 me-1">Rp 6.700.000</h6>
-                              <small class="text-success fw-semibold">
-                                <i class="bx bx-chevron-up"></i>
-                                42.9%
-                              </small>
+                </div>
+              </div>
+
+
+              <div class="col-lg-3 mb-4 order-0">
+                <div class="card">
+                  <div class="d-flex align-items-end row">
+
+                    <div class="card-body px-5">
+                      <div class="card-title d-flex align-items-start justify-content-between">
+                        <div class="avatar flex-shrink-0">
+                          <img src="{{  asset('assets/img/icons/unicons/paypal.png')  }}" alt="Credit Card" class="rounded">
+                        </div>
+                      </div>
+                      <h5 class="my-1">Product</h5>
+                      <h4>{{$totalProduct}}</h4>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              
+              
+              <div class="col-lg-3 mb-4 order-0">
+                <div class="card">
+                  <div class="d-flex align-items-end row">
+
+                    <div class="card-body px-5">
+                      <div class="card-title d-flex align-items-start justify-content-between">
+                        <div class="avatar flex-shrink-0">
+                          <img src="{{  asset('assets/img/icons/unicons/chart.png')  }}" alt="Credit Card" class="rounded">
+                        </div>
+                      </div>
+                      <h5 class="my-1">Customer</h5>
+                      <h4>{{$totalCustomer}}</h4>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-lg-6 mb-4 order-0">
+                <div class="card">
+                  <div class="d-flex align-items-end row">
+
+                    <div class="card-body p-5">
+                      <h3 class="text-primary">Top 5 Customer</h3>
+
+                      <?php
+                        foreach ($topCustomer as $data)
+                        {
+                          echo"
+                          <div class='row'>
+                            <div class='col-6'>
+                              <h5>$data->CUSTNAME</h5>
+                            </div>
+                            <div class='col-6 text-end'>
+                              <h5>$data->TOTAL</h5>
                             </div>
                           </div>
-                        </div>
-                        <div id="incomeChart"></div>
-                        <div class="d-flex justify-content-center pt-4 gap-2">
-                          <div class="flex-shrink-0">
-                            <div id="expensesOfWeek"></div>
-                          </div>
-                          <div>
-                            <p class="mb-n1 mt-1">Income This Week</p>
-                            <small class="text-muted">Rp 145.000 more than last week</small>
-                          </div>
-                        </div>
-                      </div>
+                          ";
+                        }
+                      ?>
+
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!-- Transactions -->
-              <div class="col-md-6 col-lg-4 order-2 mb-4">
-                <div class="card h-100">
-                  <div class="card-header d-flex align-items-center justify-content-between">
-                    <h5>Transactions</h5>
-                    <small class="fw-semibold">Based on Payments</small>
-                  </div>
-                  <div class="card-body">
-                    <ul class="p-0 m-0">
 
+              <div class="col-lg-6 mb-4 order-0">
+                <div class="card">
+                  <div class="d-flex align-items-end row">
 
-                      <li class="d-flex mb-4 pb-1">
-                        <div class="avatar flex-shrink-0 me-3">
-                          <img src="{{  asset('assets/img/icons/unicons/chart.png')  }}" alt="User" class="rounded" />
-                        </div>
-                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                          <div class="me-2">
-                            <h6 class="mb-0">Bank Transfer</h6>
+                    <div class="card-body p-5">
+                      <h3 class="text-primary">Top 5 Product</h3>
+                      
+                      <?php
+                        foreach ($topProduct as $data)
+                        {
+                          echo"
+                          <div class='row'>
+                            <div class='col-6'>
+                              <h5>$data->PRODNAME</h5>
+                            </div>
+                            <div class='col-6 text-end'>
+                              <h5>$data->QTY</h5>
+                            </div>
                           </div>
-                          <div class="user-progress d-flex align-items-center gap-1">
-                            <small>Rp 5.000.000</small>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="d-flex mb-4 pb-1">
-                        <div class="avatar flex-shrink-0 me-3">
-                          <img src="{{  asset('assets/img/icons/unicons/cc-success.png')  }}" alt="User" class="rounded" />
-                        </div>
-                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                          <div class="me-2">
-                            <h6 class="mb-0">Credit Card</h6>
-                          </div>
-                          <div class="user-progress d-flex align-items-center gap-1">
-                            <small>Rp 4.900.000</small>
-                          </div>
-                        </div>
-                      </li>
+                          ";
+                        }
+                      ?>
 
-                      <li class="d-flex">
-                        <div class="avatar flex-shrink-0 me-3">
-                          <img src="{{  asset('assets/img/icons/unicons/cc-warning.png')  }}" alt="User" class="rounded" />
-                        </div>
-                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                          <div class="me-2">
-                            <h6 class="mb-0">Debit Card</h6>
-                          </div>
-                          <div class="user-progress d-flex align-items-center gap-1">
-                            <small>Rp 770.800</small>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
+                    </div>
                   </div>
                 </div>
               </div>
-              <!--/ Transactions -->
             </div>
           </div>
           <!-- / Content -->

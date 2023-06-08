@@ -14,12 +14,12 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Profile</title>
+    <title>Customer Insert</title>
 
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="{{  asset('assets/img/favicon/favicon.ico')  }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,25 +30,25 @@
     />
 
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="{{  asset('assets/vendor/fonts/boxicons.css')  }}" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="../assets/css/demo.css" />
+    <link rel="stylesheet" href="{{  asset('assets/vendor/css/core.css')  }}" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{{  asset('assets/vendor/css/theme-default.css')  }}" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="{{  asset('assets/css/demo.css')  }}" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="{{  asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css')  }}" />
 
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="../assets/vendor/js/helpers.js"></script>
+    <script src="{{  asset('assets/vendor/js/helpers.js')  }}"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="../assets/js/config.js"></script>
+    <script src="{{  asset('assets/js/config.js')  }}"></script>
   </head>
 
   <body>
@@ -58,7 +58,7 @@
         <!-- Menu -->
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
-            <a href="dashboard.html" class="app-brand-link">
+            <a href="{{  route('dashboard')  }}" class="app-brand-link">
               <span class="app-brand-logo demo">
                 <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg"
                   xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -116,34 +116,13 @@
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
             <li class="menu-item">
-              <a href="dashboard.html" class="menu-link">
+              <a href="{{  route('dashboard')  }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
             </li>
   
-            <li class="menu-header small text-uppercase">
-              <span class="menu-header-text">Account Settings</span>
-            </li>
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                <div data-i18n="Account Settings">Account</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="profile.html" class="menu-link">
-                    <div data-i18n="Account">Profile</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="pages-account-settings-account.html" class="menu-link">
-                    <div data-i18n="Account">Update Profile</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-  
+            
             <!-- Forms & Tables -->
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Data</span></li>
             <!-- Forms -->
@@ -154,12 +133,12 @@
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="productmaster.html" class="menu-link">
+                  <a href="{{  route('productMaster')  }}" class="menu-link">
                     <div data-i18n="Vertical Form">Product Master</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="productupdate.html" class="menu-link">
+                  <a href="{{  route('productInsert')  }}" class="menu-link">
                     <div data-i18n="Horizontal Form">Input/Update Product</div>
                   </a>
                 </li>
@@ -172,12 +151,12 @@
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="transactions.html" class="menu-link">
+                  <a href="{{  route('transaction')}}" class="menu-link">
                     <div data-i18n="Vertical Form">Transaction Header</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="transactiondetail.html" class="menu-link">
+                  <a href="{{  route('transactionProduct')  }}" class="menu-link">
                     <div data-i18n="Horizontal Form">Transaction Detail</div>
                   </a>
                 </li>
@@ -190,12 +169,12 @@
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="customerdata.html" class="menu-link">
+                  <a href="{{  route('customerData')  }}" class="menu-link">
                     <div data-i18n="customer-list">Customer Data</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="customer.html" class="menu-link">
+                  <a href="{{  route('customerInsert')  }}" class="menu-link">
                     <div data-i18n="Vertical Form">Input/Update Customer</div>
                   </a>
                 </li>
@@ -218,63 +197,7 @@
             </div>
   
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-              <!-- Search -->
-              <div class="navbar-nav align-items-center">
-                <div class="nav-item d-flex align-items-center">
-                  <i class="bx bx-search fs-4 lh-0"></i>
-                  <input type="text" class="form-control border-0 shadow-none" placeholder="Search..."
-                    aria-label="Search..." />
-                </div>
-              </div>
-              <!-- /Search -->
-  
-              <ul class="navbar-nav flex-row align-items-center ms-auto">
-                <!-- User -->
-                <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                    <div class="avatar avatar-online">
-                      <img src="../assets/img/avatars/6.png" alt class="w-px-40 h-auto rounded-circle" />
-                    </div>
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-end">
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <div class="d-flex">
-                          <div class="flex-shrink-0 me-3">
-                            <div class="avatar avatar-online">
-                              <img src="../assets/img/avatars/6.png" alt class="w-px-40 h-auto rounded-circle" />
-                            </div>
-                          </div>
-                          <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">Angeline Ivana</span>
-                            <small class="text-muted">Admin</small>
-                          </div>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="dropdown-divider"></div>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="profile.html">
-                        <i class="bx bx-user me-2"></i>
-                        <span class="align-middle">My Profile</span>
-                      </a>
-                    </li>
-  
-                    <li>
-                      <div class="dropdown-divider"></div>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="index.html">
-                        <i class="bx bx-power-off me-2"></i>
-                        <span class="align-middle">Log Out</span>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <!--/ User -->
-              </ul>
+              Customer/<b>Customer Insert</b>
             </div>
           </nav>  
 
@@ -286,88 +209,52 @@
                 <div class="card">
                   <div class="row p-5">
                     <h3>Customer Data</h3>
-                    <div class="form">
-                      <div class="row">
-                        <div class="col-lg-6 col-md-12 mb-3">
-                          <label for="cust-id" class="form-label">Customer ID</label>
-                          <input type="text" id="cust-id" placeholder="auto generated by system" class="form-control shadow-none" disabled>
-                        </div>
-                        <div class="col-lg-6 col-md-12 mb-3">
-                          <label for="cust-username" class="form-label">Username</label>
-                          <input type="text" id="cust-username" placeholder="Username" class="form-control shadow-none">
-                        </div>
-                        <div class="col-lg-6 col-md-12 mb-3">
-                          <label for="cust-name" class="form-label">Name</label>
-                          <input type="text" id="cust-name" placeholder="Name" class="form-control shadow-none">
-                        </div>
-                        <div class="col-lg-6 col-md-12 mb-3">
-                          <label for="cust-gender" class="form-label">Gender</label>
-                          <select name="" id="cust-gender" class="form-select shadow-none">
-                              <option value="male">Male</option>
-                              <option value="female">Female</option>
-                          </select>
-                        </div>
-                        <div class="col-lg-6 col-md-12 mb-3">
-                          <label for="cust-email" class="form-label">Email</label>
-                          <input type="email" id="cust-email" placeholder="example@gmail.com" class="form-control shadow-none">
-                        </div>
-                        <div class="col-lg-6 col-md-12 mb-3">
-                          <label for="cust-address" class="form-label">Address</label>
-                          <input type="text" id="cust-address" placeholder="Address" class="form-control shadow-none">
-                        </div>
-                        <div class="col-lg-6 col-md-12 mb-3">
-                          <label for="cust-phone" class="form-label">Phone</label>
-                          <input type="text" id="cust-phone" placeholder="62XXXXXXXX" class="form-control shadow-none">
-                        </div>
+                    <form action="{{  route('custInsertFunction')  }}" method="POST">
+                      {{ csrf_field() }}
+                      <div class="form">
                         <div class="row">
                           <div class="col-lg-6 col-md-12 mb-3">
-                            <input type="button" value="Save" class="btn btn-primary">
+                            <label for="cust-id" class="form-label">Customer ID</label>
+                            <input type="text" id="cust-id" name="ID" placeholder="auto generated by system" class="form-control shadow-none" disabled>
+                          </div>
+                          <div class="col-lg-6 col-md-12 mb-3">
+                            <label for="cust-username" class="form-label">Username</label>
+                            <input type="text" id="cust-username" name="USERNAME" placeholder="Username" class="form-control shadow-none" required>
+                          </div>
+                          <div class="col-lg-6 col-md-12 mb-3">
+                            <label for="cust-name" class="form-label">Name</label>
+                            <input type="text" id="cust-name" name="NAME" placeholder="Name" class="form-control shadow-none" required>
+                          </div>
+                          <div class="col-lg-6 col-md-12 mb-3">
+                            <label for="cust-gender" class="form-label">Gender</label>
+                            <select name="GENDER" id="cust-gender" class="form-select shadow-none" required>
+                                <option value="M">Male</option>
+                                <option value="F">Female</option>
+                            </select>
+                          </div>
+                          <div class="col-lg-6 col-md-12 mb-3">
+                            <label for="cust-email" class="form-label">Email</label>
+                            <input type="email" id="cust-email" name="EMAIL" placeholder="example@gmail.com" class="form-control shadow-none" required>
+                          </div>
+                          <div class="col-lg-6 col-md-12 mb-3">
+                            <label for="cust-address" class="form-label">Address</label>
+                            <input type="text" id="cust-address" name="ADDRESS" placeholder="Address" class="form-control shadow-none" required>
+                          </div>
+                          <div class="col-lg-6 col-md-12 mb-3">
+                            <label for="cust-phone" class="form-label">Phone</label>
+                            <input type="text" id="cust-phone" name="PHONE" placeholder="62XXXXXXXX" class="form-control shadow-none" required>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-6 col-md-12 mb-3">
+                              <input type="submit" value="Save" class="btn btn-primary">
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </form>
                   </div>  
                 </div>  
               </div>
-
-              <div class="col-lg-12 mb-4 order-0">
-                <div class="card">
-                  <div class="row justify-content-center align-items-center p-4">
-                    <div class="table-responsive">
-                      <table class="table table-hover table-bordered">
-                        <thead>
-                          <tr>
-                            <th scope="col" style="width: 13%;">ID</th>
-                            <th scope="col" style="width: 10%;">CUST</th>
-                            <th scope="col" style="width: 13%;">DATE</th>
-                            <th scope="col" style="width: 16%;">SHIP</th>
-                            <th scope="col" style="width: 13%;">METHOD</th>
-                            <th scope="col" style="width: 10%;">STATUS</th>
-                            <th scope="col" style="width: 15%;">TOTAL</th>
-                            <th scope="col" style="width: 10%;"></th>
-                          </tr>
-                          <tbody>
-                            <tr>
-                              <th scope="row">20230420-T-001</th>
-                              <td>CU-001</td>
-                              <td>2023-04-20</td>
-                              <td>Jalan Sudirman No. 1</td>
-                              <td>Credit Card</td>
-                              <td>Paid</td>
-                              <td class="text-end">1.950.000</td>
-                              <td scope="col" style="padding: 15px 0px; text-align: center;">
-                                <a href="" onclick=""><i class="bi bi-clipboard-check px-2"></i></a>
-                                <a href="" onclick=""><i class="bi bi-trash text-danger px-2"></i></a>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </thead>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
             </div>   
           </div>   
          
@@ -399,21 +286,21 @@
     </div>
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="../assets/vendor/libs/popper/popper.js"></script>
-    <script src="../assets/vendor/js/bootstrap.js"></script>
-    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="{{  asset('assets/vendor/libs/jquery/jquery.js')  }}"></script>
+    <script src="{{  asset('assets/vendor/libs/popper/popper.js')  }}"></script>
+    <script src="{{  asset('assets/vendor/js/bootstrap.js')  }}"></script>
+    <script src="{{  asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js')  }}"></script>
 
-    <script src="../assets/vendor/js/menu.js"></script>
+    <script src="{{  asset('assets/vendor/js/menu.js')  }}"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
 
     <!-- Main JS -->
-    <script src="../assets/js/main.js"></script>
+    <script src="{{  asset('assets/js/main.js')  }}"></script>
 
     <!-- Page JS -->
-    <script src="../assets/js/pages-account-settings-account.js"></script>
+    <script src="{{  asset('assets/js/pages-account-settings-account.js')  }}"></script>
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
